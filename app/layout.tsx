@@ -1,9 +1,11 @@
+// app/layout.tsx — Root layout
+
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Inter } from 'next/font/google'
-import { Header } from '@/app/components/Header'
-import { Footer } from '@/app/components/Footer'
+import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 import './globals.css'
 
 const inter = Inter({
@@ -27,17 +29,17 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable}`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="flex min-h-screen flex-col">
         <Header />
 
-        <div className="flex-1 flex flex-col">
-          <div className="max-w-300 mx-auto w-full relative flex-1 flex flex-col">
+        <div className="flex flex-1 flex-col">
+          <div className="relative mx-auto flex w-full max-w-300 flex-1 flex-col">
             <div
-              className="absolute left-0 top-0 bottom-0 w-px bg-text/25 pointer-events-none"
+              className="bg-text/25 pointer-events-none absolute top-0 bottom-0 left-0 w-px"
               aria-hidden="true"
             />
             <div
-              className="absolute right-0 top-0 bottom-0 w-px bg-text/25 pointer-events-none"
+              className="bg-text/25 pointer-events-none absolute top-0 right-0 bottom-0 w-px"
               aria-hidden="true"
             />
 

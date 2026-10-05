@@ -1,3 +1,5 @@
+// app/changelog/page.tsx — Changelog
+
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -63,44 +65,47 @@ export default function ChangelogPage() {
         }}
       >
         <div className="px-6 py-24 md:py-32">
-          <div className="max-w-xl mx-auto text-center bg-bg px-10 py-8">
-            <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-4">
+          <div className="bg-bg mx-auto max-w-xl px-10 py-8 text-center">
+            <h1 className="mb-4 text-5xl font-medium tracking-tight md:text-6xl">
               Changelog
             </h1>
-            <p className="text-[14px] md:text-[16px] text-muted">
+            <p className="text-muted text-[14px] md:text-[16px]">
               A running record of additions and changes to Corpus Stack.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="border-t border-text/25" />
+      <div className="border-text/25 border-t" />
 
       {entries.map((entry, i) => (
         <div key={i} className="grid grid-cols-1 md:grid-cols-[220px_1px_1fr]">
-          <div className="px-6 py-8 md:py-16 md:pr-10 flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start gap-3 md:gap-0">
-            <time className="text-[11px] font-mono uppercase tracking-widest text-muted md:mb-3">
+          <div className="flex flex-row items-center justify-between gap-3 px-6 py-8 md:flex-col md:items-start md:justify-start md:gap-0 md:py-16 md:pr-10">
+            <time className="text-muted font-mono text-[11px] tracking-widest uppercase md:mb-3">
               {entry.date}
             </time>
             <span
-              className="inline-block text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 shrink-0"
+              className="inline-block shrink-0 px-2 py-0.5 font-mono text-[10px] tracking-widest uppercase"
               style={tagStyles[entry.tag]}
             >
               {entry.tag}
             </span>
           </div>
 
-          <div className="hidden md:block bg-text/25 self-stretch" aria-hidden="true" />
+          <div
+            className="bg-text/25 hidden self-stretch md:block"
+            aria-hidden="true"
+          />
 
-          <div className="px-6 pb-12 pt-0 md:py-16 md:pl-10">
-            <h2 className="text-xl md:text-2xl font-medium tracking-tight mb-6">
+          <div className="px-6 pt-0 pb-12 md:py-16 md:pl-10">
+            <h2 className="mb-6 text-xl font-medium tracking-tight md:text-2xl">
               {entry.title}
             </h2>
             <ul className="space-y-3">
               {entry.items.map((item, j) => (
                 <li
                   key={j}
-                  className="grid grid-cols-[16px_1fr] gap-3 text-[14px] leading-relaxed text-muted"
+                  className="text-muted grid grid-cols-[16px_1fr] gap-3 text-[14px] leading-relaxed"
                 >
                   <span className="text-muted select-none">+</span>
                   <span>{item}</span>
@@ -111,22 +116,25 @@ export default function ChangelogPage() {
         </div>
       ))}
 
-      <div className="border-t border-text/25" />
+      <div className="border-text/25 border-t" />
 
       <div className="grid grid-cols-1 md:grid-cols-[220px_1px_1fr]">
         <div className="px-6 py-8 md:py-16 md:pr-10">
-          <span className="inline-block text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 border border-accent text-accent">
+          <span className="border-accent text-accent inline-block border px-2 py-0.5 font-mono text-[10px] tracking-widest uppercase">
             BROWSE
           </span>
         </div>
 
-        <div className="hidden md:block bg-text/25 self-stretch" aria-hidden="true" />
+        <div
+          className="bg-text/25 hidden self-stretch md:block"
+          aria-hidden="true"
+        />
 
-        <div className="px-6 pb-12 pt-0 md:py-16 md:pl-10">
-          <h2 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
+        <div className="px-6 pt-0 pb-12 md:py-16 md:pl-10">
+          <h2 className="mb-4 text-xl font-medium tracking-tight md:text-2xl">
             Explore 202 curated resources
           </h2>
-          <p className="text-[14px] text-muted leading-relaxed mb-6 max-w-lg">
+          <p className="text-muted mb-6 max-w-lg text-[14px] leading-relaxed">
             Search by keyword, or filter by section, stack, type, and
             difficulty.
           </p>
@@ -135,7 +143,7 @@ export default function ChangelogPage() {
             className="link-mono group inline-flex items-center gap-1.5 text-[13px]"
           >
             Open Browse
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
       </div>

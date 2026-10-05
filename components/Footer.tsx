@@ -1,15 +1,17 @@
+// components/Footer.tsx — Site footer
+
 import Link from 'next/link'
 import { Orb } from './Orb'
 
 export function Footer() {
   return (
-    <footer className="border-t border-text/25 mt-auto">
+    <footer className="border-text/25 mt-auto border-t">
       <div className="px-6 py-16">
-        <div className="flex justify-center mb-12 text-border">
+        <div className="text-border mb-12 flex justify-center">
           <Orb size={120} />
         </div>
         <div className="text-center">
-          <p className="text-[14px] text-muted max-w-md mx-auto leading-relaxed">
+          <p className="text-muted mx-auto max-w-md text-[14px] leading-relaxed">
             The best way to learn is to build.
             <br />
             The second best is to find something worth building.
@@ -17,9 +19,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-text/25" />
+      <div className="border-text/25 border-t" />
 
-      <div className="px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-muted font-mono">
+      <div className="text-muted flex flex-col items-center justify-between gap-4 px-6 py-6 font-mono text-[12px] md:flex-row">
         <div className="flex items-center gap-4">
           <Link href="/about" className="link-mono">
             About

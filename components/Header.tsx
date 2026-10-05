@@ -1,21 +1,23 @@
+// components/Header.tsx — Site header
+
 import Link from 'next/link'
 import { Orb } from './Orb'
 
 export function Header() {
   return (
-    <header className="border-b border-border bg-bg">
-      <div className="max-w-300 mx-auto px-6 h-14 flex items-center justify-between">
+    <header className="border-border bg-bg border-b">
+      <div className="mx-auto flex h-14 max-w-300 items-center justify-between px-6">
         <Link
           href="/"
-          className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
         >
           <Orb size={22} />
-          <span className="font-semibold tracking-tight text-[15px]">
+          <span className="text-[15px] font-semibold tracking-tight">
             Corpus Stack
           </span>
         </Link>
 
-        <nav className="flex items-center gap-6 text-[13px] text-muted">
+        <nav className="text-muted flex items-center gap-6 text-[13px]">
           <Link href="/browse" className="hover:text-text transition-colors">
             Browse
           </Link>

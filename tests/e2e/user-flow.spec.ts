@@ -3,7 +3,9 @@ import { test, expect } from '@playwright/test'
 test.describe('Corpus Stack — user flows', () => {
   test('homepage loads and shows 202 resources', async ({ page }) => {
     await page.goto('/')
-    await expect(page.getByRole('heading', { name: /Find what's worth learning/i })).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: /Find what's worth learning/i }),
+    ).toBeVisible()
     await expect(page.getByText(/202 free technical resources/i)).toBeVisible()
   })
 
@@ -36,7 +38,9 @@ test.describe('Corpus Stack — user flows', () => {
     await page.goto('/resource/2')
     await expect(page.getByRole('heading', { name: 'CS50X' })).toBeVisible()
     await expect(page.getByText('Harvard')).toBeVisible()
-    await expect(page.getByRole('link', { name: /Visit resource/i })).toBeVisible()
+    await expect(
+      page.getByRole('link', { name: /Visit resource/i }),
+    ).toBeVisible()
   })
 
   test('404 for invalid resource id', async ({ page }) => {
@@ -46,7 +50,9 @@ test.describe('Corpus Stack — user flows', () => {
 
   test('about page renders', async ({ page }) => {
     await page.goto('/about')
-    await expect(page.getByRole('heading', { name: /curated map/i })).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: /curated map/i }),
+    ).toBeVisible()
     await expect(page.getByText(/Aaron Swartz/)).toBeVisible()
   })
 

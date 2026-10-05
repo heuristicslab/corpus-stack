@@ -1,3 +1,5 @@
+// app/browse/page.tsx — Browse / Search
+
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 import {
@@ -7,14 +9,13 @@ import {
   getAllTypes,
   type BrowseFilters,
 } from '@/lib/resources'
-import { Meta } from '@/app/components/Meta'
+import { Meta } from '@/components/Meta'
 
 export const metadata = {
   title: 'Browse — Corpus Stack',
 }
 
 type SearchParams = Promise<BrowseFilters & { page?: string }>
-
 
 export default async function BrowsePage({
   searchParams,
@@ -46,17 +47,17 @@ export default async function BrowsePage({
     <div>
       <div className="px-6 py-10">
         <form action="/browse" method="get">
-          <div className="flex border border-text/25 bg-surface focus-within:border-accent transition-colors">
+          <div className="border-text/25 bg-surface focus-within:border-accent flex border transition-colors">
             <input
               type="text"
               name="q"
               defaultValue={filters.q ?? ''}
               placeholder="Search free technical resources..."
-              className="flex-1 px-4 py-3 bg-transparent outline-none text-[15px] placeholder:text-muted"
+              className="placeholder:text-muted flex-1 bg-transparent px-4 py-3 text-[15px] outline-none"
             />
             <button
               type="submit"
-              className="px-6 border-l border-text/25 text-[13px] font-mono text-muted hover:text-accent hover:bg-bg transition-colors"
+              className="border-text/25 text-muted hover:text-accent hover:bg-bg border-l px-6 font-mono text-[13px] transition-colors"
             >
               SEARCH
             </button>
@@ -64,9 +65,9 @@ export default async function BrowsePage({
         </form>
       </div>
 
-      <div className="border-t border-text/25" />
+      <div className="border-text/25 border-t" />
 
-      <div className="px-6 py-6 space-y-4">
+      <div className="space-y-4 px-6 py-6">
         <FilterRow
           label="Section"
           options={sections}
@@ -97,11 +98,11 @@ export default async function BrowsePage({
         />
       </div>
 
-      <div className="border-t border-text/25" />
+      <div className="border-text/25 border-t" />
 
       <div className="px-6 py-8">
-        <div className="flex items-baseline justify-between mb-6">
-          <div className="text-[13px] font-mono text-muted">
+        <div className="mb-6 flex items-baseline justify-between">
+          <div className="text-muted font-mono text-[13px]">
             {total} {total === 1 ? 'result' : 'results'}
             {totalPages > 1 && (
               <span className="ml-2">
@@ -114,43 +115,43 @@ export default async function BrowsePage({
             filters.stack ||
             filters.type ||
             filters.difficulty) && (
-              <Link
-                href="/browse"
-                className="link-mono inline-flex items-center gap-1 text-[13px]"
-              >
-                Clear filters
-                <X className="w-3.5 h-3.5" />
-              </Link>
-            )}
+            <Link
+              href="/browse"
+              className="link-mono inline-flex items-center gap-1 text-[13px]"
+            >
+              Clear filters
+              <X className="h-3.5 w-3.5" />
+            </Link>
+          )}
         </div>
 
         {resources.length === 0 ? (
-          <div className="border border-text/25 p-12 text-center">
+          <div className="border-text/25 border p-12 text-center">
             <div className="text-muted mb-2">No results.</div>
-            <div className="text-[13px] text-muted">
+            <div className="text-muted text-[13px]">
               Try a different search or remove filters.
             </div>
           </div>
         ) : (
           <>
-            <div className="border-t border-text/25">
+            <div className="border-text/25 border-t">
               {resources.map((r) => (
                 <Link
                   key={r.id}
                   href={`/resource/${r.id}`}
-                  className="block py-5 border-b border-text/25 hover:bg-surface transition-colors"
+                  className="border-text/25 hover:bg-surface block border-b py-5 transition-colors"
                   style={{
                     contentVisibility: 'auto',
                     containIntrinsicSize: '0 96px',
                   }}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-2 md:gap-6">
+                  <div className="grid grid-cols-1 gap-2 md:grid-cols-[1fr_auto] md:gap-6">
                     <div className="min-w-0">
-                      <div className="font-medium mb-1">{r.name}</div>
-                      <div className="text-[13px] text-muted line-clamp-1 mb-2">
+                      <div className="mb-1 font-medium">{r.name}</div>
+                      <div className="text-muted mb-2 line-clamp-1 text-[13px]">
                         {r.description}
                       </div>
-                      <div className="text-[11px] font-mono text-muted">
+                      <div className="text-muted font-mono text-[11px]">
                         <Meta
                           items={[
                             r.technologies?.slice(0, 4).join(', '),
@@ -159,7 +160,7 @@ export default async function BrowsePage({
                         />
                       </div>
                     </div>
-                    <div className="text-[12px] font-mono text-muted md:text-right shrink-0">
+                    <div className="text-muted shrink-0 font-mono text-[12px] md:text-right">
                       <Meta items={[r.resource_type, r.stack]} />
                     </div>
                   </div>
@@ -206,23 +207,23 @@ function Pagination({
   const hasNext = page < totalPages
 
   return (
-    <div className="flex items-center justify-between mt-8 pt-4 border-t border-text/25">
+    <div className="border-text/25 mt-8 flex items-center justify-between border-t pt-4">
       {hasPrev ? (
         <Link
           href={buildHref(page - 1)}
           className="link-mono group inline-flex items-center gap-1.5 text-[13px]"
         >
-          <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
+          <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5" />
           Previous
         </Link>
       ) : (
-        <span className="inline-flex items-center gap-1.5 text-[13px] font-mono text-text/25">
-          <ArrowLeft className="w-3.5 h-3.5" />
+        <span className="text-text/25 inline-flex items-center gap-1.5 font-mono text-[13px]">
+          <ArrowLeft className="h-3.5 w-3.5" />
           Previous
         </span>
       )}
 
-      <div className="text-[12px] font-mono text-muted">
+      <div className="text-muted font-mono text-[12px]">
         Page {page} / {totalPages}
       </div>
 
@@ -232,12 +233,12 @@ function Pagination({
           className="link-mono group inline-flex items-center gap-1.5 text-[13px]"
         >
           Next
-          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
         </Link>
       ) : (
-        <span className="inline-flex items-center gap-1.5 text-[13px] font-mono text-text/25">
+        <span className="text-text/25 inline-flex items-center gap-1.5 font-mono text-[13px]">
           Next
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="h-3.5 w-3.5" />
         </span>
       )}
     </div>
@@ -278,7 +279,7 @@ function FilterRow({
 
   return (
     <div className="flex items-start gap-4 text-[13px]">
-      <div className="w-20 shrink-0 text-[11px] font-mono uppercase tracking-widest text-muted pt-1">
+      <div className="text-muted w-20 shrink-0 pt-1 font-mono text-[11px] tracking-widest uppercase">
         {label}
       </div>
       <div className="flex flex-wrap gap-1">
@@ -288,10 +289,10 @@ function FilterRow({
           style={
             !current
               ? {
-                backgroundColor: '#18181B',
-                color: '#FAFAF9',
-                borderColor: '#18181B',
-              }
+                  backgroundColor: '#18181B',
+                  color: '#FAFAF9',
+                  borderColor: '#18181B',
+                }
               : undefined
           }
         >
@@ -307,10 +308,10 @@ function FilterRow({
               style={
                 isActive
                   ? {
-                    backgroundColor: '#18181B',
-                    color: '#FAFAF9',
-                    borderColor: '#18181B',
-                  }
+                      backgroundColor: '#18181B',
+                      color: '#FAFAF9',
+                      borderColor: '#18181B',
+                    }
                   : undefined
               }
             >

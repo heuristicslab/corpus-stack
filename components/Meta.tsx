@@ -1,3 +1,5 @@
+// components/Meta.tsx — Resource metadata renderer
+
 import { ArrowRight } from 'lucide-react'
 
 export function DifficultyLabel({ value }: { value: string | null }) {
@@ -7,7 +9,7 @@ export function DifficultyLabel({ value }: { value: string | null }) {
     return (
       <span className="inline-flex items-center gap-1">
         {from}
-        <ArrowRight className="w-3 h-3" />
+        <ArrowRight className="h-3 w-3" />
         {to}
       </span>
     )
@@ -18,7 +20,7 @@ export function DifficultyLabel({ value }: { value: string | null }) {
 export function Meta({ items }: { items: (string | null | undefined)[] }) {
   const clean = items.filter(Boolean) as string[]
   return (
-    <span className="inline-flex items-center gap-1.5 flex-wrap">
+    <span className="inline-flex flex-wrap items-center gap-1.5">
       {clean.map((item, i) => (
         <span key={i} className="inline-flex items-center gap-1.5">
           {item.includes('→') ? <DifficultyLabel value={item} /> : item}

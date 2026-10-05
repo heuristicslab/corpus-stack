@@ -1,23 +1,24 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-bg: #FAFAF9;
-  --color-surface: #FFFFFF;
-  --color-text: #18181B;
-  --color-muted: #71717A;
-  --color-border: #E4E4E7;
-  --color-accent: #6366F1;
-  --color-accent-hover: #4F46E5;
-  --color-success: #16A34A;
-  --color-warning: #CA8A04;
-  --color-error: #DC2626;
+  --color-bg: #fafaf9;
+  --color-surface: #ffffff;
+  --color-text: #18181b;
+  --color-muted: #71717a;
+  --color-border: #e4e4e7;
+  --color-accent: #6366f1;
+  --color-accent-hover: #4f46e5;
+  --color-success: #16a34a;
+  --color-warning: #ca8a04;
+  --color-error: #dc2626;
 }
 
 :root {
   color-scheme: light;
 }
 
-html, body {
+html,
+body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-inter), system-ui, sans-serif;
@@ -29,7 +30,10 @@ html, body {
   border-radius: 0;
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   border-radius: 2px;
 }
 
@@ -49,49 +53,51 @@ a {
 }
 
 .btn-primary {
-  background-color: #18181B;
-  color: #FAFAF9;
+  background-color: #18181b;
+  color: #fafaf9;
   transition: background-color 150ms ease;
 }
 
 .btn-primary:hover {
-  background-color: #6366F1;
+  background-color: #6366f1;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #18181B;
-  border: 1px solid #E4E4E7;
-  transition: border-color 150ms ease, color 150ms ease;
+  color: #18181b;
+  border: 1px solid #e4e4e7;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
 }
 
 .btn-secondary:hover {
-  border-color: #18181B;
+  border-color: #18181b;
 }
 .btn-accent {
-  background-color: #6366F1;
-  color: #FFFFFF;
+  background-color: #6366f1;
+  color: #ffffff;
   transition: background-color 150ms ease;
 }
 
 .btn-accent:hover {
-  background-color: #4F46E5;
+  background-color: #4f46e5;
 }
 .link-muted {
-  color: #71717A;
+  color: #71717a;
   transition: color 150ms ease;
 }
 
 .link-muted:hover {
-  color: #6366F1;
+  color: #6366f1;
 }
 
 .link-mono {
-  color: #71717A;
+  color: #71717a;
   font-family: var(--font-geist-mono), monospace;
   transition: color 150ms ease;
 }
 
 .link-mono:hover {
-  color: #6366F1;
+  color: #6366f1;
 }
