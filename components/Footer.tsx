@@ -30,7 +30,7 @@ export function Footer() {
             Changelog
           </Link>
           <a
-            href="https://github.com/njokinjeri/personal-toolbox"
+            href="https://github.com/heuristicslab/corpus-stack"
             target="_blank"
             rel="noopener noreferrer"
             className="link-mono"

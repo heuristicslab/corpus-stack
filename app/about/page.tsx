@@ -133,7 +133,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-8 text-center">
             <a
-              href="https://github.com/njokinjeri/personal-toolbox"
+              href="https://github.com/heuristicslab/corpus-stack"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-accent inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[13px]"

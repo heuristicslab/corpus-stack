@@ -1,0 +1,19 @@
+## What does this PR do?
+
+A clear description of the change.
+
+## Type of change
+
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Resource addition
+- [ ] Documentation
+- [ ] Refactor / cleanup
+
+## Checklist
+
+- [ ] Tests pass (`pnpm test`, `pnpm test:e2e`)
+- [ ] Lint passes (`pnpm lint`)
+- [ ] Types pass (`pnpm exec tsc --noEmit`)
+- [ ] Formatted (`pnpm format`)
+- [ ] No `.env.local` or secrets committed

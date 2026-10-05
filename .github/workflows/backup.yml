@@ -1,0 +1,33 @@
+name: backup-database
+
+on:
+  schedule:
+    # Daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Backup database to SQL files
+        run: |
+          mkdir -p data-backup
+          supabase db dump --db-url "${{ secrets.SUPABASE_DB_URL }}" -f data-backup/schema.sql
+          supabase db dump --db-url "${{ secrets.SUPABASE_DB_URL }}" -f data-backup/data.sql --data-only --use-copy
+
+      - name: Commit and push backup files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: automated Supabase backup"
+          file_pattern: 'data-backup/*.sql'
