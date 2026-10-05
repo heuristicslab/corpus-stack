@@ -38,10 +38,45 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            github.rest.issues.create({
+            const title = 'Broken links detected'
+            const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `Broken links detected — ${new Date().toISOString().split('T')[0]}`,
-              body: 'Weekly link validation found broken resources. See the workflow run for details.',
-              labels: ['bug', 'broken-links']
+              state: 'open',
+              labels: 'broken-links'
             })
+            if (issues.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `Broken links detected - ${new Date().toISOString().split('T')[0]}`,
+                body: 'Weekly link validation found broken resources. See the workflow run for details.',
+                labels: ['bug', 'broken-links']
+              })
+            }
+
+      - name: Close issue if all links are healthy
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'broken-links'
+            })
+            for (const issue of issues) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: 'All links are reachable. Closing.'
+              })
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              })
+            }
