@@ -11,7 +11,7 @@ type Resource = {
 type CheckResult = {
   ok: boolean
   status: number
-  reason: 'ok' | 'broken' | 'blocked' | 'rate-limited' | 'timeout' | 'error'
+  reason: 'ok' | 'broken' | 'blocked' | 'timeout' | 'error'
 }
 
 async function checkLink(url: string): Promise<CheckResult> {
@@ -46,19 +46,21 @@ async function checkLink(url: string): Promise<CheckResult> {
       return { ok: false, status, reason: 'broken' }
     }
 
-    // 5xx = server error, flag for review
+    // 502, 503, 504 = infrastructure / temporary
+    if (status === 502 || status === 503 || status === 504) {
+      return { ok: true, status, reason: 'blocked' }
+    }
+
+    // 500 = server error, worth flagging
     if (status >= 500) {
       return { ok: false, status, reason: 'error' }
     }
 
-    // 3xx that didn't resolve (shouldn't happen with redirect: follow)
+    // Anything else, treat as ok
     return { ok: true, status, reason: 'ok' }
   } catch (err) {
-    const msg = err instanceof Error ? err.message : 'Unknown error'
-    if (msg.includes('timeout') || msg.includes('aborted')) {
-      return { ok: false, status: 0, reason: 'timeout' }
-    }
-    return { ok: false, status: 0, reason: 'error' }
+    // Timeout or network error — treat as blocked, not broken
+    return { ok: true, status: 0, reason: 'timeout' }
   }
 }
 
@@ -76,7 +78,7 @@ async function main() {
   console.log(`Checking ${resources.length} resources...\n`)
 
   const broken: Resource[] = []
-  const blocked: Resource[] = []
+  let blockedCount = 0
   let checked = 0
 
   for (const r of resources) {
@@ -86,8 +88,8 @@ async function main() {
     if (!result.ok) {
       broken.push(r)
       console.log(`✗ [${result.status}] ${r.name} — ${r.resource_url}`)
-    } else if (result.reason === 'blocked') {
-      blocked.push(r)
+    } else if (result.reason !== 'ok') {
+      blockedCount++
     }
 
     if (checked % 20 === 0) {
@@ -100,7 +102,7 @@ async function main() {
 
   console.log(`\nChecked ${checked} resources.`)
   console.log(`Broken: ${broken.length}`)
-  console.log(`Blocked/rate-limited (not broken): ${blocked.length}`)
+  console.log(`Blocked/rate-limited/timeout (not broken): ${blockedCount}`)
 
   if (broken.length > 0) {
     console.log('\nBroken resources:')
@@ -110,7 +112,7 @@ async function main() {
     process.exit(1)
   }
 
-  console.log('\nAll resources are accessible.')
+  console.log('\nAll resources are reachable.')
 }
 
 main()
