@@ -11,6 +11,7 @@ import {
     getRelatedResources,
     type Resource,
 } from '@/lib/resources'
+import { DifficultyLabel } from '@/app/components/Meta'
 
 type Params = Promise<{ id: string }>
 
@@ -29,19 +30,6 @@ export async function generateMetadata({ params }: { params: Params }) {
     }
 }
 
-function DifficultyLabel({ value }: { value: string }) {
-    if (value.includes('→')) {
-        const [from, to] = value.split('→').map((s) => s.trim())
-        return (
-            <span className="inline-flex items-center gap-1">
-                {from}
-                <ArrowRight className="w-3 h-3" />
-                {to}
-            </span>
-        )
-    }
-    return <span>{value}</span>
-}
 
 function MetaList({
     label,

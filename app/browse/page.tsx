@@ -7,6 +7,7 @@ import {
   getAllTypes,
   type BrowseFilters,
 } from '@/lib/resources'
+import { Meta } from '@/app/components/Meta'
 
 export const metadata = {
   title: 'Browse — Corpus Stack',
@@ -14,34 +15,6 @@ export const metadata = {
 
 type SearchParams = Promise<BrowseFilters & { page?: string }>
 
-function DifficultyLabel({ value }: { value: string | null }) {
-  if (!value) return null
-  if (value.includes('→')) {
-    const [from, to] = value.split('→').map((s) => s.trim())
-    return (
-      <span className="inline-flex items-center gap-1">
-        {from}
-        <ArrowRight className="w-3 h-3" />
-        {to}
-      </span>
-    )
-  }
-  return <span>{value}</span>
-}
-
-function Meta({ items }: { items: (string | null | undefined)[] }) {
-  const clean = items.filter(Boolean) as string[]
-  return (
-    <span className="inline-flex items-center gap-1.5 flex-wrap">
-      {clean.map((item, i) => (
-        <span key={i} className="inline-flex items-center gap-1.5">
-          {item.includes('→') ? <DifficultyLabel value={item} /> : item}
-          {i < clean.length - 1 && <span className="text-muted">·</span>}
-        </span>
-      ))}
-    </span>
-  )
-}
 
 export default async function BrowsePage({
   searchParams,

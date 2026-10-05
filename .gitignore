@@ -41,3 +41,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .vscode/
+
+# Testing
+coverage
+playwright-report
+test-results
+.playwright
+
