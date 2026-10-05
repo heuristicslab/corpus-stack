@@ -29,5 +29,5 @@ jobs:
       - name: Commit and push backup files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: automated Supabase backup"
+          commit_message: 'chore: automated Supabase backup'
           file_pattern: 'data-backup/*.sql'

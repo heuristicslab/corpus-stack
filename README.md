@@ -117,4 +117,4 @@ would like its metadata corrected, please
 
 ---
 
-*Built for the curious. For builders. For internet explorers.*
+_Built for the curious. For builders. For internet explorers._

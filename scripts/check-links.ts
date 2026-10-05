@@ -8,7 +8,9 @@ type Resource = {
   resource_url: string
 }
 
-async function checkLink(url: string): Promise<{ ok: boolean; status: number }> {
+async function checkLink(
+  url: string,
+): Promise<{ ok: boolean; status: number }> {
   try {
     const res = await fetch(url, {
       method: 'HEAD',

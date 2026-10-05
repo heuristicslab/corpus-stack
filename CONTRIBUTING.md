@@ -31,6 +31,7 @@ already there, no need to suggest it.
 using the **Resource suggestion** template.
 
 Include:
+
 - Resource name
 - URL
 - A short description
@@ -80,6 +81,7 @@ Fill in .env.local with your Supabase URL and anon key (Project Settings
 → API in Supabase).
 
 ### Before opening a PR
+
 ```bash
 pnpm lint
 pnpm exec tsc --noEmit
