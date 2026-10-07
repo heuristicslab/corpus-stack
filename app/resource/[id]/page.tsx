@@ -12,13 +12,20 @@ export async function generateMetadata({ params }: { params: Params }) {
   const { id } = await params
   const resource = await getResourceById(parseInt(id, 10))
   if (!resource) return { title: 'Not found — Corpus Stack' }
+
+  const shortDescription = resource.description.slice(0, 160)
+
   return {
     title: `${resource.name} — Corpus Stack`,
-    description: resource.description,
+    description: shortDescription,
+    alternates: {
+      canonical: `/resource/${resource.id}`,
+    },
     openGraph: {
       title: resource.name,
-      description: resource.description,
+      description: shortDescription,
       url: `/resource/${resource.id}`,
+      type: 'article',
     },
   }
 }

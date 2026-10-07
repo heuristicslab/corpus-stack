@@ -5,9 +5,18 @@ import { ArrowRight } from 'lucide-react'
 
 export const metadata = {
   title: 'Changelog — Corpus Stack',
-  description: 'A running record of additions and changes to Corpus Stack.',
+  description:
+    'A running record of additions, updates, and verification cycles for the Corpus Stack archive.',
+  alternates: {
+    canonical: '/changelog',
+  },
+  openGraph: {
+    title: 'Changelog — Corpus Stack',
+    description:
+      'A running record of additions, updates, and verification cycles for the Corpus Stack archive.',
+    url: '/changelog',
+  },
 }
-
 type Tag = 'NEW' | 'IMPROVED' | 'FIXED'
 
 type Entry = {

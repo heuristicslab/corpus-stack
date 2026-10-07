@@ -6,6 +6,21 @@ export const alt = 'Corpus Stack'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
+export const metadata = {
+  title: 'Browse — Corpus Stack',
+  description:
+    'Browse 200+ verified free resources by section, stack, type, or difficulty. Search across web development, computer science, AI, and more.',
+  alternates: {
+    canonical: '/browse',
+  },
+  openGraph: {
+    title: 'Browse — Corpus Stack',
+    description:
+      'Browse 200+ verified free resources by section, stack, type, or difficulty.',
+    url: '/browse',
+  },
+}
+
 export default async function Image() {
   return new ImageResponse(
     <div

@@ -13,6 +13,11 @@ import { Meta } from '@/components/Meta'
 
 export const metadata = {
   title: 'Browse — Corpus Stack',
+  description:
+    'Browse 200+ verified free resources by section, stack, type, or difficulty. Search across web development, computer science, AI, and more.',
+  alternates: {
+    canonical: '/browse',
+  },
 }
 
 type SearchParams = Promise<BrowseFilters & { page?: string }>

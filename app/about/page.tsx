@@ -5,7 +5,16 @@ import { ArrowRight } from 'lucide-react'
 export const metadata = {
   title: 'About — Corpus Stack',
   description:
-    'Corpus Stack is an open archive of the world’s best free technical education.',
+    'Corpus Stack is a curated map of the internet for developers. Learn how the archive works, how resources are verified, and how to contribute.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About — Corpus Stack',
+    description:
+      'Corpus Stack is a curated map of the internet for developers.',
+    url: '/about',
+  },
 }
 
 export default function AboutPage() {

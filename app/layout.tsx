@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   },
   description:
     'A curated map of the internet for developers. 200+ verified free resources covering web development, computer science, AI, cloud, and cybersecurity.',
+  alternates: {
+    canonical: '/',
+  },
   authors: [{ name: 'Corpus Stack' }],
   openGraph: {
     title: 'Corpus Stack',
