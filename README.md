@@ -13,56 +13,31 @@ A curated map of the internet for developers.
 
 ## What this is
 
-Corpus Stack is a curated map of the internet for developers. It brings
-together the best free resources for learning, building, and exploring
-technology.
-
-Every entry is verified against three non-negotiable criteria before it earns a place:
+Corpus Stack brings together the best free resources for learning,
+building, and exploring technology. Every entry is verified against
+three non-negotiable criteria:
 
 1. **Strictly free** - no paywalls, no trials, no hidden costs
-2. **Location-agnostic** - accessible globally without regional restrictions
+2. **Location-agnostic** - accessible globally, no regional restrictions
 3. **High utility** - actionable material, not filler
 
-The goal is to eliminate curation fatigue. Instead of another list of links,
-Corpus Stack provides a vetted path. A living archive maintained by its
-community.
+The goal is to eliminate curation fatigue. Instead of another list of
+links, Corpus Stack provides a vetted path.
 
 ## How the archive works
 
-### Curation
+Resources are added by hand. A candidate goes through:
 
-Resources are added by hand. Every suggestion, whether from a maintainer or
-a community contributor, goes through the same process:
+1. Discovery - the resource is found or suggested
+2. Review - checked against the three tenets
+3. Categorization - assigned a section, stack, type, and difficulty
+4. Description - written in plain language to help a learner decide
+5. Verification - URL tested, metadata checked
+6. Publication - added to the archive
 
-1. **Discovery** - a candidate resource is found or suggested
-2. **Review** - checked against the three tenets
-3. **Categorization** - assigned a section, stack, type, and difficulty
-4. **Editorial** - described in plain language that helps a learner decide
-5. **Verification** - the URL is tested, the resource is confirmed free and
-   accessible, and metadata is reviewed
-6. **Publication** - added to the archive
-
-The process is manual on purpose. Automated scraping produces noise. Manual
-curation produces signal.
-
-### Verification
-
-Verified resources carry a `last_verified` date. Verification checks:
-
-- The URL resolves
-- The resource is still free
-- The content is still accessible globally
-- The metadata still matches reality
-
-A weekly automated workflow checks every URL in the archive for broken links.
-Broken resources are flagged in a GitHub issue and reviewed manually.
-
-### Maintenance
-
-- **Daily:** Automated SQL backup to this repository
-- **Weekly:** Link validation across all resources
-- **Monthly:** Manual review of flagged resources, addition of new ones
-- **Quarterly:** Taxonomy review of sections, stacks, and categories
+Verification happens continuously. A weekly workflow checks every URL
+for broken links. Resources are removed when they no longer meet the
+standard.
 
 ## What you'll find here
 
@@ -73,9 +48,9 @@ The archive covers:
 - Cloud & DevOps, Cybersecurity, Systems & Infrastructure
 - Design & Creative Technology
 
-Organized across ten sections: **Learn, Build, AI, Research, Discover,
-Communities**, plus specialized categories for **Low-Code/No-Code,
-Web-scape, Mentors & Creators,** and **Productivity**.
+Organized across six sections: **Learn, Build, Discover, AI, Research,
+and Communities**. The taxonomy is intentionally small and continues to
+evolve as the archive grows.
 
 ## Contribute
 
@@ -86,11 +61,6 @@ Anyone can suggest a resource, report a broken link, or improve the site.
 - [Open an issue](https://github.com/heuristicslab/corpus-stack/issues/new/choose) with a resource suggestion or bug report
 
 By participating, you agree to uphold the [Code of Conduct](./CODE_OF_CONDUCT.md).
-
-## Follow
-
-- **GitHub:** [heuristicslab/corpus-stack](https://github.com/heuristicslab/corpus-stack)
-- **Changelog:** [corpus-stack.vercel.app/changelog](https://corpus-stack.vercel.app/changelog)
 
 ## Copyright and licensing
 

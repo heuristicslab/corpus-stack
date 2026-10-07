@@ -75,12 +75,9 @@ export default function ChangelogPage() {
       >
         <div className="px-6 py-24 md:py-32">
           <div className="bg-bg mx-auto max-w-xl px-10 py-8 text-center">
-            <h1 className="mb-4 text-5xl font-medium tracking-tight md:text-6xl">
+            <h1 className="mb-4 text-5xl font-medium tracking-tight md:text-7xl">
               Changelog
             </h1>
-            <p className="text-muted text-[14px] md:text-[16px]">
-              A running record of additions and changes to Corpus Stack.
-            </p>
           </div>
         </div>
       </section>

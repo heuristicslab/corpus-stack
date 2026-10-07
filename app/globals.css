@@ -83,6 +83,21 @@ a {
 .btn-accent:hover {
   background-color: #4f46e5;
 }
+
+.btn-outline {
+  background-color: transparent;
+  color: #18181b;
+  border: 1px solid #18181b;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.btn-outline:hover {
+  background-color: #18181b;
+  color: #fafaf9;
+}
+
 .link-muted {
   color: #71717a;
   transition: color 150ms ease;

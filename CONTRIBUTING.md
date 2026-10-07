@@ -17,7 +17,7 @@ Check that the resource satisfies **all three tenets**:
 
 1. **Strictly free** - no paywalls, no trials, no hidden costs
 2. **Location-agnostic** - accessible globally, no regional restrictions
-3. **High utility** - actionable educational material, not filler
+3. **High utility** - actionable material, not filler
 
 If it fails any of these, it doesn't belong.
 
@@ -91,21 +91,6 @@ pnpm test:e2e
 ```
 
 All must pass. CI runs the same checks on your PR.
-Commit conventions
-
-### We use Conventional Commits:
-
-    feat: - new feature
-
-    fix: - bug fix
-
-    chore: - tooling, dependencies
-
-    docs: - documentation
-
-    test: - tests
-
-    refactor: - code restructuring
 
 ### The three tenets in detail
 
@@ -130,7 +115,6 @@ High utility
 - Actionable educational content
 - Documentation, courses, tutorials, books, interactive tools
 - Not link aggregators or directories
-- Not AI-generated filler
 
 **Resources that don't meet all three aren't included, no matter how
 well-known they are.**

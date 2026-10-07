@@ -61,17 +61,18 @@ export default function AboutPage() {
             {
               n: '01',
               title: 'Strictly free',
-              body: 'No paywalls, no first-month-free trials, no hidden costs. If accessing the resource requires payment at any point, it does not belong here.',
+              body: 'No paywalls, no trials, no hidden costs. Every resource in the archive can be accessed completely free, without a credit card or a subscription.',
             },
             {
               n: '02',
               title: 'Location-agnostic',
               body: 'Content must be accessible globally without regional restrictions or institution-only emails. Knowledge should not depend on where you were born or which school you attended.',
             },
+
             {
               n: '03',
               title: 'High utility',
-              body: 'Actionable material: documentation hubs, MOOCs, interactive tutorials, sandboxes, verified references. No filler. No AI-generated noise.',
+              body: 'Actionable material: documentation, courses, interactive tutorials, sandboxes, and verified references. Content that helps you learn or build.',
             },
           ].map((t, i, arr) => (
             <div
@@ -103,19 +104,18 @@ export default function AboutPage() {
           </h2>
           <div className="text-muted space-y-4 text-[15px] leading-relaxed">
             <p>
-              The internet is saturated with resource lists. Most are static,
-              eventually fill with broken links, and offer no editorial judgment
-              about what is actually worth your time.
+              The best free technical resources are scattered across the
+              internet. Finding them takes time, and knowing which ones are
+              worth your attention takes even more. Corpus Stack brings them
+              together in one place.
             </p>
             <p>
-              Corpus Stack eliminates curation fatigue. Every resource is
-              manually reviewed. Every link is checked. Descriptions are written
-              to help you decide, not to market.
+              Every resource is chosen by hand, checked against the three
+              tenets, and described in plain language.
             </p>
             <p>
-              This is a living archive, not a directory. Resources are added
-              monthly, verified regularly, and removed when they no longer meet
-              the standard.
+              This is a living archive. Resources are added regularly, verified
+              frequently, and removed when they no longer meet the standard.
             </p>
           </div>
         </div>
@@ -140,14 +140,23 @@ export default function AboutPage() {
               it. That&apos;s how the archive stays honest.
             </p>
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href="https://github.com/heuristicslab/corpus-stack"
+              href="https://github.com/heuristicslab/corpus-stack/issues/new?template=resource_suggestion.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[13px]"
+              className="btn-accent inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[13px] font-medium"
             >
-              Submit on GitHub
+              Suggest a resource
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+            <a
+              href="https://github.com/heuristicslab/corpus-stack/issues/new?template=bug_report.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[13px] font-medium"
+            >
+              Report an issue
               <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
