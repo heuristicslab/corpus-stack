@@ -52,7 +52,7 @@ export default async function BrowsePage({
               type="text"
               name="q"
               defaultValue={filters.q ?? ''}
-              placeholder="Search free technical resources..."
+              placeholder="Search resources..."
               className="placeholder:text-muted flex-1 bg-transparent px-4 py-3 text-[15px] outline-none"
             />
             <button
