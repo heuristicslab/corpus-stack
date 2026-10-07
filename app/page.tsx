@@ -7,17 +7,20 @@ import {
   getSectionCounts,
   getStackCounts,
   getRecentResources,
-  getAIHighlights,
+  getMonthlyHighlights,
 } from '@/lib/resources'
+import { getCurrentTheme } from '@/lib/theme'
 import { Meta } from '@/components/Meta'
 
 export default async function Home() {
-  const [total, sections, stacks, recent, aiHighlights] = await Promise.all([
+  const theme = getCurrentTheme()
+
+  const [total, sections, stacks, recent, highlights] = await Promise.all([
     getTotalCount(),
     getSectionCounts(),
     getStackCounts(),
     getRecentResources(5),
-    getAIHighlights(4),
+    getMonthlyHighlights(theme.stack, 4),
   ])
 
   return (
@@ -76,20 +79,20 @@ export default async function Home() {
               This month
             </div>
             <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-              AI
+              {theme.label}
             </h2>
           </div>
           <Link
-            href="/browse?section=AI"
+            href={theme.link}
             className="link-mono inline-flex items-center gap-1 text-[13px]"
           >
-            Explore all AI
+            Explore all {theme.label}
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
 
         <div className="bg-text/25 border-text/25 grid grid-cols-1 gap-px border md:grid-cols-2">
-          {aiHighlights.map((r) => (
+          {highlights.map((r) => (
             <Link
               key={r.id}
               href={`/resource/${r.id}`}

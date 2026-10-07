@@ -28,15 +28,13 @@ type Entry = {
 
 const entries: Entry[] = [
   {
-    date: 'October 5, 2026',
+    date: 'October 7, 2026',
     tag: 'NEW',
     title: 'Corpus Stack launches',
     items: [
-      '202 curated resources across 10 sections and 9 stacks.',
-      'Every entry reviewed against the three tenets before publishing.',
-      'Search, filters, pagination, and resource detail pages live.',
-      'Automated daily backups deployed.',
-      'Monthly theme introduced: AI.',
+      '202 curated resources across 9 stacks.',
+      'Six sections: Learn, Build, Reference, Discover, Research, Communities.',
+      'Monthly themes rotate automatically.',
     ],
   },
 ]

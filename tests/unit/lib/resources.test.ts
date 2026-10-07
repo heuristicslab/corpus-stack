@@ -54,10 +54,10 @@ describe('resources — data integrity', () => {
   })
 
   it('filters by section', async () => {
-    const { resources } = await browseResources({ section: 'AI' }, 1)
+    const { resources } = await browseResources({ section: 'Reference' }, 1)
     expect(resources.length).toBeGreaterThan(0)
     for (const r of resources) {
-      expect(r.section).toBe('AI')
+      expect(r.section).toBe('Reference')
     }
   })
 

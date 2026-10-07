@@ -71,11 +71,14 @@ export async function getRecentResources(limit = 5): Promise<Resource[]> {
   return (data as Resource[]) ?? []
 }
 
-export async function getAIHighlights(limit = 4): Promise<Resource[]> {
+export async function getMonthlyHighlights(
+  stack: string,
+  limit = 4,
+): Promise<Resource[]> {
   const { data } = await supabase
     .from('resources')
     .select('*')
-    .eq('section', 'AI')
+    .eq('stack', stack)
     .limit(limit)
   return (data as Resource[]) ?? []
 }
