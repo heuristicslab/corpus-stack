@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-text/25 mt-auto border-t">
       <div className="px-6 py-16">
-        <div className="text-border mb-12 flex justify-center">
+        <div className="text-muted/40 mb-12 flex justify-center">
           <Orb size={120} />
         </div>
         <div className="text-center">

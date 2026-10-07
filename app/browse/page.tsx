@@ -222,7 +222,7 @@ function Pagination({
           Previous
         </Link>
       ) : (
-        <span className="text-text/25 inline-flex items-center gap-1.5 font-mono text-[13px]">
+        <span className="text-muted inline-flex items-center gap-1.5 font-mono text-[13px]">
           <ArrowLeft className="h-3.5 w-3.5" />
           Previous
         </span>
@@ -241,7 +241,7 @@ function Pagination({
           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
         </Link>
       ) : (
-        <span className="text-text/25 inline-flex items-center gap-1.5 font-mono text-[13px]">
+        <span className="text-muted inline-flex items-center gap-1.5 font-mono text-[13px]">
           Next
           <ArrowRight className="h-3.5 w-3.5" />
         </span>
