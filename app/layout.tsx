@@ -15,8 +15,25 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Corpus Stack',
-  description: 'A curated archive of free technical education.',
+  metadataBase: new URL('https://corpus-stack.vercel.app'),
+  title: {
+    default: 'Corpus Stack',
+    template: '%s',
+  },
+  description: 'The curated archive of free technical education.',
+  openGraph: {
+    title: 'Corpus Stack',
+    description: 'The curated archive of free technical education.',
+    url: 'https://corpus-stack.vercel.app',
+    siteName: 'Corpus Stack',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corpus Stack',
+    description: 'The curated archive of free technical education.',
+  },
 }
 
 export default function RootLayout({
