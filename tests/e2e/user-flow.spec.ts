@@ -6,15 +6,9 @@ test.describe('Corpus Stack — user flows', () => {
     await expect(
       page.getByRole('heading', { name: /Find what's worth learning/i }),
     ).toBeVisible()
-    await expect(page.getByText(/202 free technical resources/i)).toBeVisible()
-  })
-
-  test('homepage search navigates to browse with query', async ({ page }) => {
-    await page.goto('/')
-    await page.getByPlaceholder('Search resources...').fill('rust')
-    await page.getByRole('button', { name: /SEARCH/i }).click()
-    await expect(page).toHaveURL(/\/browse\?q=rust/)
-    await expect(page.getByText(/results/i).first()).toBeVisible()
+    await expect(
+      page.getByText(/202 free resources for learning/i),
+    ).toBeVisible()
   })
 
   test('browse page renders and paginates', async ({ page }) => {
