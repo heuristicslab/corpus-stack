@@ -54,7 +54,7 @@ test.describe('Corpus Stack — user flows', () => {
     await page.goto('/changelog')
     await expect(page.getByRole('heading', { name: 'Changelog' })).toBeVisible()
     await expect(page.getByText('Corpus Stack launches')).toBeVisible()
-    await expect(page.getByText(/October 5, 2026/)).toBeVisible()
+    await expect(page.getByText(/October 7, 2026/)).toBeVisible()
   })
 
   test('external resource links open in a new tab', async ({ page }) => {
