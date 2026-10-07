@@ -83,7 +83,7 @@ export default async function Image() {
       {/* Subtitle */}
       <div
         style={{
-          fontSize: '28px',
+          fontSize: '32px',
           color: '#71717A',
           maxWidth: '800px',
           textAlign: 'center',
@@ -91,7 +91,7 @@ export default async function Image() {
           position: 'relative',
         }}
       >
-        The curated archive of free technical education.
+        Curated. Verified. Free.
       </div>
 
       {/* URL */}

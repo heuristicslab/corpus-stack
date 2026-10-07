@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Data: CC-BY-4.0](https://img.shields.io/badge/Data-CC--BY--4.0-lightgrey.svg)](./DATA-LICENSE.md)
 
-The curated archive of free technical education.
+A curated map of the internet for developers.
 
 **Browse:** [corpus-stack.vercel.app](https://corpus-stack.vercel.app)
 
@@ -13,8 +13,11 @@ The curated archive of free technical education.
 
 ## What this is
 
-Corpus Stack is an open archive of free technical resources. Every entry is
-verified against three non-negotiable criteria before it earns a place:
+Corpus Stack is a curated map of the internet for developers. It brings
+together the best free resources for learning, building, and exploring
+technology.
+
+Every entry is verified against three non-negotiable criteria before it earns a place:
 
 1. **Strictly free** - no paywalls, no trials, no hidden costs
 2. **Location-agnostic** - accessible globally without regional restrictions

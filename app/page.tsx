@@ -27,8 +27,12 @@ export default async function Home() {
           Find what&apos;s worth learning.
         </h1>
         <p className="text-muted mb-10 max-w-2xl text-base md:text-lg">
-          A curated archive of {total} free technical resources. Verified for
-          quality. Accessible everywhere. Forever free.
+          {total} free resources for learning, building, and exploring
+          technology.
+          <br />
+          <span className="text-text/70">
+            Verified. Accessible. Forever free.
+          </span>
         </p>
 
         <form action="/browse" method="get" className="max-w-2xl">

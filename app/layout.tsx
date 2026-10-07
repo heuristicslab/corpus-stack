@@ -20,10 +20,13 @@ export const metadata: Metadata = {
     default: 'Corpus Stack',
     template: '%s',
   },
-  description: 'The curated archive of free technical education.',
+  description:
+    'A curated map of the internet for developers. 200+ verified free resources covering web development, computer science, AI, cloud, and cybersecurity.',
+  authors: [{ name: 'Corpus Stack' }],
   openGraph: {
     title: 'Corpus Stack',
-    description: 'The curated archive of free technical education.',
+    description:
+      'A curated map of the internet for developers. 200+ verified free resources.',
     url: 'https://corpus-stack.vercel.app',
     siteName: 'Corpus Stack',
     locale: 'en_US',
@@ -32,7 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Corpus Stack',
-    description: 'The curated archive of free technical education.',
+    description:
+      'A curated map of the internet for developers. 200+ verified free resources.',
   },
 }
 
