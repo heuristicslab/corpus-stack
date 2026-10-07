@@ -48,7 +48,7 @@ The archive covers:
 - Cloud & DevOps, Cybersecurity, Systems & Infrastructure
 - Design & Creative Technology
 
-Organized across six sections: **Learn, Build, Discover, AI, Research,
+Organized across six sections: **Learn, Build, Reference, Discover, Research,
 and Communities**. The taxonomy is intentionally small and continues to
 evolve as the archive grows.
 
