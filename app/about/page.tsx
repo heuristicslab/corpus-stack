@@ -20,10 +20,9 @@ export default function AboutPage() {
             A curated map of the internet for developers.
           </h1>
           <p className="text-muted mx-auto max-w-xl text-lg leading-relaxed">
-            Corpus Stack brings together the best free resources for
-            learning, building, and exploring technology. Every entry
-            is verified against three non-negotiable criteria before it
-            earns a place.
+            Corpus Stack brings together the best free resources for learning,
+            building, and exploring technology. Every entry is verified against
+            three non-negotiable criteria before it earns a place.
           </p>
         </div>
       </section>
@@ -68,8 +67,9 @@ export default function AboutPage() {
           ].map((t, i, arr) => (
             <div
               key={t.n}
-              className={`grid grid-cols-[60px_1fr] gap-6 py-6 ${i < arr.length - 1 ? 'border-text/15 border-b' : ''
-                }`}
+              className={`grid grid-cols-[60px_1fr] gap-6 py-6 ${
+                i < arr.length - 1 ? 'border-text/15 border-b' : ''
+              }`}
             >
               <div className="text-muted pt-0.5 font-mono text-[13px]">
                 {t.n}
