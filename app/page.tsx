@@ -73,7 +73,7 @@ export default async function Home() {
       <div className="border-text/25 border-t" />
 
       <section className="px-6 py-16">
-        <div className="mb-8 flex items-baseline justify-between">
+        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between md:gap-0">
           <div>
             <div className="text-accent mb-2 font-mono text-[11px] tracking-widest uppercase">
               This month
