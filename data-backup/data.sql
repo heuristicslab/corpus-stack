@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict 98ie6jBYv5bAvjDqiCNGi9GCXWahe36dVWBONQVdgq9YGnemYafAqfKrlj5BN3u
+-- \restrict PbiqVqC6gXztfTm9rXxP72JYiKZuOMwqRM9M75BNdce5VcQxc2LlkyQTF3nrbTi
 
 -- Dumped from database version 17.11
 -- Dumped by pg_dump version 17.11
@@ -153,7 +153,7 @@ COPY "auth"."oauth_consents" ("id", "user_id", "client_id", "scopes", "granted_a
 -- Data for Name: one_time_tokens; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-COPY "auth"."one_time_tokens" ("id", "user_id", "token_type", "token_hash", "relates_to", "created_at", "updated_at", "expires_at") FROM stdin;
+COPY "auth"."one_time_tokens" ("id", "user_id", "token_type", "token_hash", "relates_to", "created_at", "updated_at", "expires_at", "link_token_hash") FROM stdin;
 \.
 
 
@@ -177,7 +177,7 @@ COPY "auth"."sso_providers" ("id", "resource_id", "created_at", "updated_at", "d
 -- Data for Name: saml_providers; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-COPY "auth"."saml_providers" ("id", "sso_provider_id", "entity_id", "metadata_xml", "metadata_url", "attribute_mapping", "created_at", "updated_at", "name_id_format") FROM stdin;
+COPY "auth"."saml_providers" ("id", "sso_provider_id", "entity_id", "metadata_xml", "metadata_url", "attribute_mapping", "created_at", "updated_at", "name_id_format", "dedicated_scope") FROM stdin;
 \.
 
 
@@ -506,6 +506,6 @@ SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 1, false);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict 98ie6jBYv5bAvjDqiCNGi9GCXWahe36dVWBONQVdgq9YGnemYafAqfKrlj5BN3u
+-- \unrestrict PbiqVqC6gXztfTm9rXxP72JYiKZuOMwqRM9M75BNdce5VcQxc2LlkyQTF3nrbTi
 
 RESET ALL;
